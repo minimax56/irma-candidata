@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mtra. Irma García Ortega - Candidata a Directora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7db9e8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            background: white;
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2a5298, #7db9e8);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(42, 82, 152, 0.4);
+            border: 5px solid white;
+        }
+
+        h1 {
+            color: #1e3c72;
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .title {
+            color: #2a5298;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .campaign-info {
+            background: linear-gradient(135deg, #7db9e8, #2a5298);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(42, 82, 152, 0.3);
+        }
+
+        .links-container {
+            margin-top: 30px;
+        }
+
+        .link-button {
+            display: block;
+            background: white;
+            border: 3px solid #2a5298;
+            color: #1e3c72;
+            text-decoration: none;
+            padding: 18px 25px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2a5298, #7db9e8);
+            transition: left 0.4s ease;
+            z-index: 0;
+        }
+
+        .link-button:hover::before {
+            left: 0;
+        }
+
+        .link-button span {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(42, 82, 152, 0.4);
+            border-color: #7db9e8;
+        }
+
+        .link-button:hover span {
+            color: white;
+        }
+
+        .link-button:active {
+            transform: translateY(-1px);
+        }
+
+        .icon {
+            margin-right: 10px;
+            font-size: 22px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .campaign-info {
+                font-size: 14px;
+            }
+
+            .link-button {
+                font-size: 16px;
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-image">IGO</div>
+            <h1>Mtra. Irma García Ortega</h1>
+            <p class="title">MAESTRA | EDUCADORA | LÍDER</p>
+            <div class="campaign-info">
+                Candidata a directora de la<br>
+                <strong>Preparatoria 2 de Octubre de 1968</strong><br>
+                Periodo 2025-2029
+            </div>
+        </div>
+
+        <div class="links-container">
+            <a href="galeria.html" class="link-button">
+                <span><span class="icon">📸</span> Mi Trayectoria con los Estudiantes</span>
+            </a>
+            
+            <a href="curriculum.html" class="link-button">
+                <span><span class="icon">📄</span> Curriculum Vitae</span>
+            </a>
+            
+            <a href="propuestas.html" class="link-button">
+                <span><span class="icon">💡</span> Mis Propuestas</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>✨ Por una educación de calidad y compromiso ✨</p>
+        </footer>
+    </div>
+</body>
+</html>

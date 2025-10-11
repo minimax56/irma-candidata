@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Trayectoria - Mtra. Irma García Ortega</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7db9e8 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            padding-top: 20px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .carousel-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+            position: relative;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .placeholder {
+            text-align: center;
+            color: #999;
+            font-size: 18px;
+            padding: 40px;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            pointer-events: none;
+        }
+
+        .carousel-btn {
+            pointer-events: all;
+            background: rgba(42, 82, 152, 0.9);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-btn:hover {
+            background: rgba(125, 185, 232, 0.95);
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:active {
+            transform: scale(0.95);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .indicator.active {
+            background: #2a5298;
+            transform: scale(1.3);
+            border-color: #7db9e8;
+        }
+
+        .indicator:hover {
+            background: #7db9e8;
+        }
+
+        .counter {
+            text-align: center;
+            color: #666;
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .back-button {
+            display: block;
+            max-width: 900px;
+            margin: 30px auto 0;
+            padding: 15px 30px;
+            background: white;
+            color: #2a5298;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                padding: 20px;
+            }
+
+            .carousel-item {
+                height: 350px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-item {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Mi Trayectoria con los Estudiantes</h1>
+        <p>Mtra. Irma García Ortega</p>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-inner" id="carouselInner">
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 1<br><br>Aquí irá tu primera imagen</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 2<br><br>Aquí irá tu segunda imagen</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 3<br><br>Aquí irá tu tercera imagen</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 4<br><br>Aquí irá tu cuarta imagen</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 5<br><br>Aquí irá tu quinta imagen</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 6<br><br>Aquí irá tu sexta imagen</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 7<br><br>Aquí irá tu séptima imagen</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 8<br><br>Aquí irá tu octava imagen</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 9<br><br>Aquí irá tu novena imagen</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="placeholder">
+                        <p>📸 Foto 10<br><br>Aquí irá tu décima imagen</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="prevSlide()">‹</button>
+                <button class="carousel-btn" onclick="nextSlide()">›</button>
+            </div>
+        </div>
+
+        <div class="carousel-indicators" id="indicators"></div>
+        <div class="counter" id="counter"></div>
+    </div>
+
+    <a href="index.html" class="back-button">← Volver al inicio</a>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 10;
+        const carouselInner = document.getElementById('carouselInner');
+        const indicatorsContainer = document.getElementById('indicators');
+        const counter = document.getElementById('counter');
+
+        // Crear indicadores
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicator.onclick = () => goToSlide(i);
+            indicatorsContainer.appendChild(indicator);
+        }
+
+        function updateCarousel() {
+            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Actualizar indicadores
+            const indicators = document.querySelectorAll('.indicator');
+            indicators.forEach((ind, index) => {
+                ind.classList.toggle('active', index === currentSlide);
+            });
+            
+            // Actualizar contador
+            counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Soporte táctil
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselInner.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselInner.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) nextSlide();
+            if (touchEndX - touchStartX > 50) prevSlide();
+        });
+
+        // Inicializar
+        updateCarousel();
+    </script>
+</body>
+</html>
