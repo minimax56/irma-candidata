@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7db9e8 100%);
+            background: linear-gradient(135deg, #307BC1 0%, #7350A2 50%, #E72B7F 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -71,6 +71,41 @@
             margin: 0 auto;
         }
 
+        .propuestas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .propuesta-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border-top: 5px solid #2a5298;
+            text-align: center;
+        }
+
+        .propuesta-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .propuesta-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .propuesta-card h3 {
+            color: #1e3c72;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
         .propuesta-card p {
             color: #666;
             font-size: 16px;
@@ -83,7 +118,7 @@
             margin: 30px auto 0;
             padding: 15px 30px;
             background: white;
-            color: #2a5298;
+            color: #307BC1;
             text-decoration: none;
             text-align: center;
             border-radius: 15px;
@@ -228,38 +263,4 @@
 
     <a href="index.html" class="back-button">← Volver al inicio</a>
 </body>
-</html>uestas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .propuesta-card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            border-top: 5px solid #2a5298;
-        }
-
-        .propuesta-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .propuesta-icon {
-            font-size: 50px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .propuesta-card h3 {
-            color: #1e3c72;
-            font-size: 22px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .prop
+</html>
