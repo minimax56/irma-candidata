@@ -182,34 +182,48 @@
                 padding: 16px 20px;
             }
         }
+        /* Contenedor: columna, botones uno por fila centrados */
         .links-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            flex-direction: column;
+            align-items: center; /* centra el bloque de botones horizontalmente */
+            gap: 16px;
+            width: 100%;
+            margin: 20px 0;
         }
         
+        /* Cada botón ocupa todo el ancho del contenedor padre hasta max-width */
         .link-button {
-            background: white;
-            color: #307BC1;
-            text-decoration: none;
-            border-radius: 15px;
-            padding: 15px 25px;
-            font-weight: 600;
+            width: 100%;
+            max-width: 1100px; /* ajusta según tu diseño */
             display: flex;
+            align-items: center;
+            justify-content: center; /* centra icono + texto horizontalmente */
+            text-decoration: none;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-weight: 600;
+            color: #307BC1;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            transition: transform .22s ease, box-shadow .22s ease;
+        }
+        
+        /* Mantener el icono y texto centrados dentro del botón */
+        .social-content {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
         
+        /* Hover */
         .link-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
         }
         
-        /* Estilos para botones de redes */
+        /* Estilos especiales para redes */
         .facebook-button {
             background-color: #1877F2;
             color: white;
@@ -220,12 +234,12 @@
             color: white;
         }
         
-        .social-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        /* Ajustes responsivos: en pantallas muy pequeñas reducir padding y tamaño */
+        @media (max-width: 420px) {
+            .link-button { padding: 12px 14px; font-size: 15px; }
+            .social-content svg { width: 18px; height: 18px; }
         }
+        
 
     </style>
 </head>
