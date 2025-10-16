@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7db9e8 100%);
+            background: linear-gradient(135deg, #307BC1 0%, #7350A2 50%, #E72B7F 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -51,41 +51,49 @@
             width: 140px;
             height: 140px;
             border-radius: 50%;
+            background: linear-gradient(135deg, #E72B7F, #7350A2);
             margin: 0 auto 20px;
-            box-shadow: 0 8px 25px rgba(42, 82, 152, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(231, 43, 127, 0.4);
             border: 5px solid white;
-            overflow: hidden;
-            background: linear-gradient(135deg, #2a5298, #7db9e8);
         }
+
         .profile-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
         h1 {
-            color: #1e3c72;
+            color: #307BC1;
             font-size: 28px;
             margin-bottom: 8px;
             font-weight: 700;
         }
 
         .title {
-            color: #2a5298;
+            color: #E72B7F;
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 15px;
         }
 
+
         .campaign-info {
-            background: linear-gradient(135deg, #7db9e8, #2a5298);
+            background: linear-gradient(135deg, #61CDE3, #307BC1);
             color: white;
             padding: 15px 20px;
             border-radius: 15px;
             font-size: 16px;
             line-height: 1.6;
             font-weight: 500;
-            box-shadow: 0 4px 15px rgba(42, 82, 152, 0.3);
+            box-shadow: 0 4px 15px rgba(48, 123, 193, 0.3);
         }
+
 
         .links-container {
             margin-top: 30px;
@@ -94,8 +102,8 @@
         .link-button {
             display: block;
             background: white;
-            border: 3px solid #2a5298;
-            color: #1e3c72;
+            border: 3px solid #307BC1;
+            color: #307BC1;
             text-decoration: none;
             padding: 18px 25px;
             border-radius: 15px;
@@ -115,7 +123,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #2a5298, #7db9e8);
+            background: linear-gradient(135deg, #E72B7F, #7350A2);
             transition: left 0.4s ease;
             z-index: 0;
         }
@@ -132,8 +140,8 @@
 
         .link-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(42, 82, 152, 0.4);
-            border-color: #7db9e8;
+            box-shadow: 0 8px 25px rgba(231, 43, 127, 0.4);
+            border-color: #E72B7F;
         }
 
         .link-button:hover span {
