@@ -210,125 +210,24 @@
     <a href="index.html" class="back-button">← Volver al inicio</a>
 
     <script>
-        // Configurar worker de PDF.js
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-        let pdfDoc = null;
-        let pageNum = 1;
-        let pageRendering = false;
-        let pageNumPending = null;
-        const scale = window.innerWidth <= 480 ? 1 : 1.5;
-
-        const container = document.getElementById('pdfContainer');
-
-        function renderPage(num) {
-            pageRendering = true;
-            pdfDoc.getPage(num).then(function(page) {
-                const viewport = page.getViewport({scale: scale});
-                
-                const canvas = document.createElement('canvas');
-                canvas.id = 'pdfCanvas';
-                const context = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                const renderContext = {
-                    canvasContext: context,
-                    viewport: viewport
-                };
-
-                const renderTask = page.render(renderContext);
-                renderTask.promise.then(function() {
-                    pageRendering = false;
-                    if (pageNumPending !== null) {
-                        renderPage(pageNumPending);
-                        pageNumPending = null;
+        // Detectar si existe el PDF y mostrar el visor
+        window.addEventListener('load', () => {
+            fetch('curriculum.pdf', { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        document.querySelector('.cv-container').innerHTML = `
+                            <iframe src="curriculum.pdf" class="pdf-viewer"></iframe>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <a href="curriculum.pdf" class="download-button" download>📥 Descargar CV</a>
+                            </div>
+                        `;
                     }
+                })
+                .catch(() => {
+                    // El PDF no existe aún, mostrar placeholder
                 });
-            });
-
-            document.getElementById('pageNum').textContent = num;
-        }
-
-        function queuePage(num) {
-            if (num <= pdfDoc.numPages) {
-                if (pageRendering) {
-                    pageNumPending = num;
-                } else {
-                    renderPage(num);
-                }
-            }
-        }
-
-        function onPrevPage() {
-            if (pageNum <= 1) return;
-            pageNum--;
-            queuePage(pageNum);
-        }
-
-        function onNextPage() {
-            if (pageNum >= pdfDoc.numPages) return;
-            pageNum++;
-            queuePage(pageNum);
-        }
-
-        function downloadPDF() {
-            const link = document.createElement('a');
-            link.href = 'curriculum.pdf';
-            link.download = 'Curriculum_Irma_Garcia_Ortega.pdf';
-            link.click();
-        }
-
-        // Cargar el PDF
-        fetch('curriculum.pdf')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('PDF no encontrado');
-                }
-                return response.arrayBuffer();
-            })
-            .then(data => {
-                pdfjsLib.getDocument(data).promise.then(function(doc) {
-                    pdfDoc = doc;
-                    
-                    const html = `
-                        <div class="pdf-viewer-wrapper">
-                            <div class="pdf-controls">
-                                <button onclick="onPrevPage()">← Anterior</button>
-                                <div class="pdf-page-info">
-                                    Página <span id="pageNum">1</span> de <span id="pageTotal">${doc.numPages}</span>
-                                </div>
-                                <button onclick="onNextPage()">Siguiente →</button>
-                            </div>
-                            <canvas id="pdfCanvas"></canvas>
-                            <div class="pdf-controls">
-                                <button onclick="downloadPDF()" style="width: 100%; margin: 0;">📥 Descargar PDF Completo</button>
-                            </div>
-                        </div>
-                    `;
-                    container.innerHTML = html;
-                    document.getElementById('pageTotal').textContent = doc.numPages;
-                    
-                    renderPage(pageNum);
-                });
-            })
-            .catch(error => {
-                container.innerHTML = `
-                    <div class="placeholder">
-                        <div class="placeholder-icon">📄</div>
-                        <h2>Curriculum Vitae</h2>
-                        <p>
-                            Para mostrar tu CV aquí, necesitas subir el archivo PDF a la misma carpeta donde están estas páginas web.
-                        </p>
-                        <p>
-                            <strong>Instrucciones:</strong><br>
-                            1. Nombra tu archivo PDF como <code>curriculum.pdf</code><br>
-                            2. Súbelo a GitHub Pages junto con estos archivos HTML<br>
-                            3. El PDF se mostrará automáticamente aquí
-                        </p>
-                    </div>
-                `;
-            });
+        });
     </script>
+
 </body>
 </html>
