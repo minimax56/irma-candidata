@@ -48,25 +48,24 @@
         }
 
         .profile-image {
-            width: 140px;
-            height: 140px;
+            width: 180px; /* más grande */
+            height: 180px;
             border-radius: 50%;
             background: linear-gradient(135deg, #E72B7F, #7350A2);
             margin: 0 auto 20px;
+            padding: 5px; /* marco degradado alrededor */
+            box-shadow: 0 8px 25px rgba(231, 43, 127, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 8px 25px rgba(231, 43, 127, 0.4);
-            border: 5px solid white;
         }
-
+        
         .profile-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border-radius: 50%; /* <-- importante para mantener el círculo */
+            object-fit: cover;  /* mantiene proporciones sin deformar */
+            border: 4px solid white; /* borde blanco interno */
         }
         h1 {
             color: #307BC1;
