@@ -116,16 +116,19 @@
             overflow: hidden;
         }
 
-        .link-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .link-button {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #E72B7F, #7350A2);
-            transition: left 0.4s ease;
-            z-index: 0;
+            max-width: 1100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease;
         }
 
         .link-button:hover::before {
@@ -214,33 +217,51 @@
             gap: 10px;
         }
         
-        /* Hover general: un poco más oscuro */
+        /* Hover general */
         .link-button:hover {
             transform: translateY(-3px);
-            background-color: #255c8e; /* Azul más oscuro */
             box-shadow: 0 8px 30px rgba(0,0,0,0.18);
         }
         
-        /* FACEBOOK */
+        /* Galería */
+        .link-button:nth-child(1) {
+            background-color: #61CDE3;
+        }
+        .link-button:nth-child(1):hover {
+            background-color: #48b5cc;
+        }
+        
+        /* Curriculum */
+        .link-button:nth-child(2) {
+            background-color: #307BC1;
+        }
+        .link-button:nth-child(2):hover {
+            background-color: #255f93;
+        }
+        
+        /* Mis Propuestas */
+        .link-button:nth-child(3) {
+            background-color: #E72B7F;
+        }
+        .link-button:nth-child(3):hover {
+            background-color: #c7246b;
+        }
+        
+        /* Facebook */
         .facebook-button {
-            background-color: #1877F2;
-            color: white;
+            background-color: #7350A2;
         }
         .facebook-button:hover {
-            background-color: #145DD1;
+            background-color: #5c3d84;
         }
         
-        /* INSTAGRAM */
+        /* Instagram */
         .instagram-button {
-            background: radial-gradient(circle at 30% 107%, 
-                #fdf497 0%, #fdf497 5%, #fd5949 45%, 
-                #d6249f 60%, #285AEB 90%);
-            color: white;
+            background-color: #E72B7F;
         }
         .instagram-button:hover {
-            filter: brightness(1.15);
+            background-color: #c7246b;
         }
-        
         /* Ajustes responsivos */
         @media (max-width: 420px) {
             .link-button { padding: 12px 14px; font-size: 15px; }
