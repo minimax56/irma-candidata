@@ -182,34 +182,31 @@
                 padding: 16px 20px;
             }
         }
-        /* Contenedor: columna, botones uno por fila centrados */
         .links-container {
             display: flex;
             flex-direction: column;
-            align-items: center; /* centra el bloque de botones horizontalmente */
+            align-items: center;
             gap: 16px;
             width: 100%;
             margin: 20px 0;
         }
         
-        /* Cada botón ocupa todo el ancho del contenedor padre hasta max-width */
         .link-button {
             width: 100%;
-            max-width: 1100px; /* ajusta según tu diseño */
+            max-width: 1100px;
             display: flex;
             align-items: center;
-            justify-content: center; /* centra icono + texto horizontalmente */
+            justify-content: center;
             text-decoration: none;
             border-radius: 12px;
             padding: 14px 20px;
             font-weight: 600;
-            color: #307BC1;
-            background: white;
+            color: white;
+            background-color: #307BC1; /* Azul claro base */
             box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-            transition: transform .22s ease, box-shadow .22s ease;
+            transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease;
         }
         
-        /* Mantener el icono y texto centrados dentro del botón */
         .social-content {
             display: inline-flex;
             align-items: center;
@@ -217,29 +214,38 @@
             gap: 10px;
         }
         
-        /* Hover */
+        /* Hover general: un poco más oscuro */
         .link-button:hover {
             transform: translateY(-3px);
+            background-color: #255c8e; /* Azul más oscuro */
             box-shadow: 0 8px 30px rgba(0,0,0,0.18);
         }
         
-        /* Estilos especiales para redes */
+        /* FACEBOOK */
         .facebook-button {
             background-color: #1877F2;
             color: white;
         }
-        
-        .instagram-button {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            color: white;
+        .facebook-button:hover {
+            background-color: #145DD1;
         }
         
-        /* Ajustes responsivos: en pantallas muy pequeñas reducir padding y tamaño */
+        /* INSTAGRAM */
+        .instagram-button {
+            background: radial-gradient(circle at 30% 107%, 
+                #fdf497 0%, #fdf497 5%, #fd5949 45%, 
+                #d6249f 60%, #285AEB 90%);
+            color: white;
+        }
+        .instagram-button:hover {
+            filter: brightness(1.15);
+        }
+        
+        /* Ajustes responsivos */
         @media (max-width: 420px) {
             .link-button { padding: 12px 14px; font-size: 15px; }
             .social-content svg { width: 18px; height: 18px; }
         }
-        
 
     </style>
 </head>
