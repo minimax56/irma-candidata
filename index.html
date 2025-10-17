@@ -8,14 +8,35 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
-
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/tiny-slider.css" />
     <link rel="stylesheet" href="assets/css/glightbox.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>   
+        .image-container {
+            margin-bottom: 20px;  
+            padding: 10px;  
+            border: 1px solid #ddd;  
+        }
 
+
+        .enlarge-image {
+            width: 100%;  
+            height: auto;  
+            cursor: pointer;  
+            transition: transform 0.3s ease;  
+        }
+
+
+        .enlarge-image.enlarged {
+            transform: scale(1.5);  
+            z-index: 1000;  
+            position: relative;  
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
+        }
+    </style>
 </head>
 
 <body>
@@ -59,7 +80,7 @@
                                             aria-label="Toggle navigation">Mis Propuestas</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#propuestas" class="page-scroll"
+                                        <a href="#vitae" class="page-scroll"
                                             aria-label="Toggle navigation">Curriculum Vitae</a>
                                     </li>
                                 </ul>
@@ -77,16 +98,16 @@
                 <div class="col-lg-5 col-md-12 col-12">
                     <div class="hero-content">
                         <h1 class="wow fadeInLeft" data-wow-delay=".4s">MTRA. IRMA GARCÍA ORTEGA</h1>
-                        <p class="wow fadeInLeft" data-wow-delay=".6s">Candidata a Directora de la Preparatoria 2 de Octubre de 1968 Período 2025-2029</p>
+                        <p class="wow fadeInLeft" data-wow-delay=".6s">Candidata a directora de la Preparatoria 2 de Octubre de 1968 Periodo 2025-2029</p>
                         <div class="button wow fadeInLeft" data-wow-delay=".8s">
-                            <a href="https://www.instagram.com/garciaortegairma/" class="btn"><i class="lni lni-instagram"></i> Instagram Oficial</a>
-                            <a href="https://www.facebook.com/irma.garciaortega.1" class="btn btn-alt"><i class="lni lni-facebook-filled"></i> Facebook Oficial</a>
+                            <a href="https://www.instagram.com/garciaortegairma/" target="_blank" class="btn"><i class="lni lni-instagram"></i> Instagram Oficial</a>
+                            <a href="https://www.facebook.com/irma.garciaortega.1" target="_blank" class="btn btn-alt"><i class="lni lni-facebook-filled"></i> Facebook Oficial</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-12 col-12">
                     <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
-                        <img src="assets/images/irma_principal.jpg" alt="#">
+                        <img src="assets/images/irma_principal_1.jpeg" alt="Mtra. Irma García Ortega">
                     </div>
                 </div>
             </div>
@@ -100,7 +121,7 @@
                     <div class="section-title">
                         <h3 class="wow zoomIn" data-wow-delay=".2s"></h3>
                         <h3 class="wow fadeInUp" data-wow-delay=".4s">Mi trayectoria con la comunidad estudiantil.</h3>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Siempre comprometida con cada uno de las y los estudiantes de nuestra unidad académica</p>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Siempre comprometida con cada uno de las y los estudiantes de nuestra unidad academica</p>
                     </div>
                 </div>
             </div>
@@ -236,7 +257,7 @@
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-table wow fadeInUp" data-wow-delay=".2s">
                         <div class="table-head">
-                            <h4 class="title">ADAPTACIÓN AL ENTORNO ESCOLAR</h4>
+                            <h4 class="title">ADACTACIÓN AL ENTORNO ESCOLAR</h4>
                         </div>
                         <div class="table-content">
                             <h4 class="middle-title">Como lo haremos:</h4>
@@ -265,7 +286,7 @@
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-table wow fadeInUp" data-wow-delay=".2s">
                         <div class="table-head">
-                            <h4 class="title">ESPARCIMIENTO Y SANA CONVIVENCIA</h4>
+                            <h4 class="title">EPARCIMIENTO Y SANA CONVIVENCIA</h4>
                         </div>
                         <div class="table-content">
                             <h4 class="middle-title">Como lo haremos:</h4>
@@ -392,19 +413,48 @@
         </div>
     </section>
 
-    <section class="section call-action">
+    <section id="vitae" class="section call-action">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
                     <div class="cta-content">
                         <h2 class="wow fadeInUp" data-wow-delay=".2s">CURRICULUM VITAE</h2>
                         <p class="wow fadeInUp" data-wow-delay=".4s">Trayectoria profesional.</p>
-                        <iframe src="curriculum.pdf" style="width: 100%; height: 900px; border: none;"></iframe>
+                        <!-- En esta parte se va a incrustar el cv -->
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="image-container">
+                        <img src="assets/images/cv_1.jpeg" alt="Mtra. Irma García Ortega" class="enlarge-image">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="image-container">
+                        <img src="assets/images/cv_2.jpeg" alt="Mtra. Irma García Ortega" class="enlarge-image">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="image-container">
+                        <img src="assets/images/cv_3.jpeg" alt="Mtra. Irma García Ortega" class="enlarge-image">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="image-container">
+                        <img src="assets/images/cv_4.jpeg" alt="Mtra. Irma García Ortega" class="enlarge-image">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="image-container">
+                        <img src="assets/images/cv_5.jpeg" alt="Mtra. Irma García Ortega" class="enlarge-image">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <footer class="footer">
      
@@ -444,5 +494,4 @@
         cu.start();
     </script>
 </body>
-
 </html>
